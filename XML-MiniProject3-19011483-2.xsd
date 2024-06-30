@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsa:schema xmlns:xsa="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.example.org"
+  xmlns:lib="http://www.library.org"
+  xmlns="http://www.example.org"
+  elementFormDefault="qualified">
+
+  <!-- Cpu -->
+  <xsa:element name="cpu">
+    <xsa:complexType>
+      <xsa:sequence>
+        <xsa:element ref = "cpumodel" minOccurs="1" maxOccurs="unbounded"/>
+      </xsa:sequence>
+    </xsa:complexType>
+  </xsa:element>
+  <xsa:element name="cpumodel">
+    <xsa:complexType>
+      <xsa:sequence>
+        <xsa:element name="brand" type="xsa:string"/>
+        <xsa:element name="socket_size" type="xsa:string"/>        
+        <!--cpu_speed-->
+        <xsa:element ref="cpu_speed"/>
+        <xsa:element name="core" type="xsa:integer"/>
+        <!--내장그래픽은 와도 되고 안와도 됨-->
+        <xsa:sequence minOccurs="0" maxOccurs="1">
+          <xsa:element name="graphic" type="xsa:string"/>    
+        </xsa:sequence>    
+        <!--usage-->
+        <xsa:element ref="usage"/>
+        <xsa:element name="release_date" type="xsa:date"/>
+        <xsa:element name="price" type="xsa:integer"/>
+      </xsa:sequence>
+      <xsa:attribute name="name" type="xsa:string" use="required"/>
+      <xsa:attribute name="bulk" type="xsa:string" use="optional" default="no"/>
+    </xsa:complexType>    
+  </xsa:element>    
+
+  <xsa:element name="cpu_speed">
+    <xsa:complexType>
+      <xsa:simpleContent>
+        <xsa:extension base="xsa:float">
+          <xsa:attribute name="unit" type="speedType" use="required"/>
+        </xsa:extension>
+      </xsa:simpleContent>
+    </xsa:complexType>
+  </xsa:element>
+  
+  <xsa:element name="usage">
+    <xsa:complexType>
+      <xsa:sequence>
+        <xsa:element ref="use" maxOccurs="unbounded"/>
+      </xsa:sequence>
+    </xsa:complexType>
+  </xsa:element>  
+  <xsa:element name="use">
+    <xsa:complexType>
+      <xsa:attribute name="for" type="useType"/>
+    </xsa:complexType>
+  </xsa:element>
+
+  <!-- 저장용량 관련된 타입사용시 -->
+  <xsa:simpleType name="speedType">
+    <xsa:restriction base="xsa:string">
+      <xsa:enumeration value="GHz"/>
+      <xsa:enumeration value="MHz"/>
+    </xsa:restriction>
+  </xsa:simpleType>
+
+  <!-- 컴퓨터 사용용도 관련된 타입사용시 -->
+  <xsa:simpleType name="useType">
+    <xsa:restriction base="xsa:string">
+      <xsa:enumeration value="office_use"/>
+      <xsa:enumeration value="low_grapic"/>
+      <xsa:enumeration value="high_grapic"/>
+    </xsa:restriction>
+  </xsa:simpleType>
+</xsa:schema>

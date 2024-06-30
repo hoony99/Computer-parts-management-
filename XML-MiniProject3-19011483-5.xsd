@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xse:schema xmlns:xse="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.library.org"
+  xmlns="http://www.library.org"
+  elementFormDefault="qualified">
+  
+  <!-- ram, ssd에서 사용-->
+  <xse:element name="capacity">
+    <xse:complexType>
+      <xse:simpleContent>
+        <xse:extension base="xse:integer">
+          <xse:attribute name="unit" type="capaType" use="required"/>
+        </xse:extension>
+      </xse:simpleContent>
+    </xse:complexType>
+  </xse:element>
+  <!-- DDR단위 타입사용시 -->
+  <xse:simpleType name="ddrType">
+    <xse:restriction base="xse:string">
+      <xse:enumeration value="ddr4"/>
+      <xse:enumeration value="ddr5"/>
+    </xse:restriction>
+  </xse:simpleType>
+  <!-- 저장용량 관련된 타입사용시 -->
+  <xse:simpleType name="capaType">
+    <xse:restriction base="xse:string">
+      <xse:enumeration value="MB"/>
+      <xse:enumeration value="GB"/>
+      <xse:enumeration value="TB"/>
+    </xse:restriction>
+  </xse:simpleType>
+</xse:schema>

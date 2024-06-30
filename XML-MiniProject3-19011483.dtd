@@ -1,0 +1,66 @@
+<!ELEMENT pcshop (cpu, mainboard, ram, ssd, power)>
+
+<!ENTITY % purpose 'for (office_use|low_grapic|high_grapic) "office_use"'>
+
+<!--cpu-->
+<!ELEMENT cpu (cpumodel+)>
+<!--cpu,mainboard,ram,ssd,power-->
+<!ELEMENT cpumodel (brand, socket_size, cpu_speed, core, graphic?, usage, release_date, price)>
+<!--cpu,mainboard,ram,ssd,power-->
+<!ELEMENT brand (#PCDATA)>
+<!--cpu,mainboard-->
+<!ELEMENT socket_size (#PCDATA)>
+<!--cpu-->
+<!ELEMENT cpu_speed (#PCDATA)>
+<!ELEMENT core (#PCDATA)>
+<!ELEMENT graphic (#PCDATA)>
+<!ELEMENT usage (use+)>
+<!ELEMENT use EMPTY>
+<!--cpu,mainboard,ram,ssd,power-->
+<!ELEMENT release_date (#PCDATA)>
+<!--cpu,mainboard,ram,ssd,power-->
+<!ELEMENT price (#PCDATA)>
+
+<!--mainboard-->
+<!ELEMENT mainboard (boardmodel+)>
+<!ELEMENT boardmodel (brand, socket_size, board_size, as?, release_date, price)>
+<!ELEMENT board_size (#PCDATA)>
+<!ELEMENT as (as_rec*)>
+<!ELEMENT as_rec (#PCDATA)>
+
+<!--ram-->
+<!ELEMENT ram (rammodel+)>
+<!ELEMENT rammodel (brand, ddr, capacity, release_date, price)>
+<!ELEMENT ddr EMPTY>
+<!--ram, ssd-->
+<!ELEMENT capacity (#PCDATA)>
+
+<!--ssd-->
+<!ELEMENT ssd (ssdmodel+)>
+<!ELEMENT ssdmodel (brand, capacity, release_date, price)>
+
+<!--power-->
+<!ELEMENT power (powermodel+)>
+<!ELEMENT powermodel (brand, power_output, release_date, price)>
+<!ELEMENT power_output (#PCDATA)>
+
+
+<!ATTLIST cpumodel name CDATA #REQUIRED>
+<!ATTLIST cpumodel bulk CDATA #IMPLIED>
+<!ATTLIST boardmodel name CDATA #REQUIRED>
+<!ATTLIST rammodel name CDATA #REQUIRED>
+<!ATTLIST ssdmodel name CDATA #REQUIRED>
+<!ATTLIST powermodel name CDATA #REQUIRED>
+<!--cpu-->
+<!ATTLIST cpu_speed unit CDATA "GHz">
+<!ATTLIST use %purpose;>
+
+<!--mainboard-->
+<!ATTLIST as_rec no CDATA #IMPLIED>
+
+<!--ram-->
+<!ATTLIST ddr type (ddr4|ddr5) #REQUIRED>
+<!ATTLIST capacity unit (MB|GB|TB) #REQUIRED>
+
+<!--power-->
+<!ATTLIST power_output unit CDATA "Watts">

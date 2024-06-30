@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.library.org"
+	xmlns:lib="http://www.library.org"
+	xmlns:exa1="http://www.example.org"  
+  xmlns:exa2="http://www.example.com">
+  <xsd:include schemaLocation="XML-MiniProject3-19011483-4.xsd" />
+	<xsd:import namespace="http://www.example.org" schemaLocation="XML-MiniProject3-19011483-2.xsd" />
+  <xsd:import namespace="http://www.example.com" schemaLocation="XML-MiniProject3-19011483-3.xsd" />
+  
+  <xsd:element name="pcshop">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref = "exa1:cpu"/>
+        <xsd:element ref = "exa2:mainboard"/>
+        <xsd:element ref = "lib:ram"/>
+        <xsd:element ref = "lib:ssd"/>
+        <xsd:element ref = "lib:power"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

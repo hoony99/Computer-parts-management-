@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsc:schema xmlns:xsc="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.library.org"
+  xmlns="http://www.library.org"
+  elementFormDefault="qualified">
+  <xsc:include schemaLocation="XML-MiniProject3-19011483-5.xsd" />
+  <!-- RAM -->
+  <xsc:element name="ram">
+    <xsc:complexType>
+      <xsc:sequence>
+        <xsc:element ref = "rammodel" minOccurs="1" maxOccurs="unbounded"/>
+      </xsc:sequence>
+    </xsc:complexType>
+  </xsc:element>
+  <xsc:element name="rammodel">
+    <xsc:complexType>
+      <xsc:sequence>
+        <xsc:element name="brand" type="xsc:string"/>
+        <xsc:element ref="ddr"/>
+        <xsc:element ref="capacity"/>
+        <xsc:element name="release_date" type="xsc:date"/>
+        <xsc:element name="price" type="xsc:integer"/>
+      </xsc:sequence>
+      <xsc:attribute name="name" type="xsc:string" use="required"/>
+    </xsc:complexType>
+  </xsc:element>
+  <xsc:element name="ddr">
+    <xsc:complexType>
+      <xsc:attribute name="type" type="ddrType" use="required"/>
+    </xsc:complexType>
+  </xsc:element>
+
+    <!-- SSD -->
+    <xsc:element name="ssd">
+        <xsc:complexType>
+          <xsc:sequence>
+            <xsc:element ref = "ssdmodel" minOccurs="1" maxOccurs="unbounded"/>
+          </xsc:sequence>
+        </xsc:complexType>
+      </xsc:element>
+      <xsc:element name="ssdmodel">
+        <xsc:complexType>
+          <xsc:sequence>
+            <xsc:element name="brand" type="xsc:string"/>
+            <xsc:element ref="capacity"/>
+            <xsc:element name="release_date" type="xsc:date"/>
+            <xsc:element name="price" type="xsc:integer"/>
+          </xsc:sequence>
+          <xsc:attribute name="name" type="xsc:string" use="required"/>
+        </xsc:complexType>
+      </xsc:element>
+      
+      <!-- 파워 -->
+      <xsc:element name="power">
+        <xsc:complexType>
+          <xsc:sequence>
+            <xsc:element ref = "powermodel" minOccurs="1" maxOccurs="unbounded"/>
+          </xsc:sequence>
+        </xsc:complexType>
+      </xsc:element>
+      <xsc:element name="powermodel">
+        <xsc:complexType>
+          <xsc:sequence>
+            <xsc:element name="brand" type="xsc:string"/>
+            <xsc:element ref="power_output"/>
+            <xsc:element name="release_date" type="xsc:date"/>
+            <xsc:element name="price" type="xsc:integer"/>      
+          </xsc:sequence>
+          <xsc:attribute name="name" type="xsc:string" use="required"/>
+        </xsc:complexType>
+      </xsc:element>
+      <xsc:element name="power_output">
+        <xsc:complexType>
+          <xsc:simpleContent>
+            <xsc:extension base="xsc:integer">
+              <xsc:attribute name="unit" type="xsc:string" use="required"/>
+            </xsc:extension>
+          </xsc:simpleContent>
+        </xsc:complexType>
+      </xsc:element>
+</xsc:schema>

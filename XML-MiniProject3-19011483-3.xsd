@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsb:schema xmlns:xsb="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.example.com"
+  xmlns:lib="http://www.library.org"
+  xmlns="http://www.example.com"
+  elementFormDefault="qualified">
+  
+  <!-- Mainboard -->
+  <xsb:element name="mainboard">
+    <xsb:complexType>
+      <xsb:sequence>
+      <xsb:element ref = "boardmodel" minOccurs="1" maxOccurs="unbounded"/>
+      </xsb:sequence>
+    </xsb:complexType>
+  </xsb:element>
+  <xsb:element name="boardmodel">
+    <xsb:complexType>
+      <xsb:sequence>
+        <xsb:element name="brand" type="xsb:string"/>
+        <xsb:element name="socket_size" type="xsb:string"/>
+        <xsb:element name="board_size" type="xsb:string"/>
+        <!-- as 유무는 있어도 없어도 됨-->
+        <xsb:sequence minOccurs="0" maxOccurs="1">
+          <xsb:element ref="as"/>
+        </xsb:sequence>
+        <xsb:element name="release_date" type="xsb:date"/>
+        <xsb:element name="price" type="xsb:integer"/>
+      </xsb:sequence>
+      <xsb:attribute name="name" type="xsb:string" use="required"/>
+    </xsb:complexType>
+  </xsb:element>
+  
+  <xsb:element name="as">
+    <xsb:complexType>
+      <xsb:sequence>
+        <xsb:element ref="as_rec" maxOccurs="unbounded"/>
+      </xsb:sequence>
+    </xsb:complexType>
+  </xsb:element>
+  <xsb:element name="as_rec">
+    <xsb:complexType>
+      <xsb:simpleContent>
+        <xsb:extension base="xsb:string">
+          <xsb:attribute name="no" type="xsb:integer" use="optional"/>
+        </xsb:extension>
+      </xsb:simpleContent>
+    </xsb:complexType>
+  </xsb:element>
+</xsb:schema>

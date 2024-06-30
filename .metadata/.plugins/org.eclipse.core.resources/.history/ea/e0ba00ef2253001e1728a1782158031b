@@ -1,0 +1,11 @@
+package gui;
+import mainGui;
+import java.awt.event.*;
+
+public class loadBtn extends mainGui{
+	public static void main(String[] args) {
+		load.addActionListner(new ActionListener() {
+			
+		});
+	}
+}

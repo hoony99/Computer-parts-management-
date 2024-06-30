@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--DOCTYPE pcshop SYSTEM "XML-MiniProject3-19011483.dtd"-->
+  
+<lib:pcshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:schemaLocation="http://www.library.org XML-MiniProject3-19011483-1.xsd"
+      xmlns:lib="http://www.library.org"
+      xmlns:exa="http://www.example.com"
+      xmlns="http://www.example.org">      
+      
+  <cpu>
+    <cpumodel name="Intel Core i9-9900" bulk="yes">
+      <brand>Intel</brand>
+      <socket_size>LGA1151</socket_size>
+      <cpu_speed unit="GHz">3.6</cpu_speed>
+      <core>8</core>
+      <graphic>Integrated</graphic>
+      <usage>
+        <use for="office_use"/>
+        <use for="low_grapic"/>
+        <use for="high_grapic"/>
+      </usage>
+      <release_date>2018-10-19</release_date>
+      <price>1650000</price>
+    </cpumodel>
+    <cpumodel name="AMD Ryzen 7 5800X">
+        <brand>AMD</brand>
+        <socket_size>AM4</socket_size>
+        <cpu_speed unit="GHz">3.8</cpu_speed>
+        <core>8</core>
+        <usage>
+          <use for="office_use"/>
+          <use for="low_grapic"/>
+          <use for="high_grapic"/>
+        </usage>
+        <release_date>2020-11-01</release_date>
+        <price>356000</price>
+    </cpumodel>      
+      <cpumodel name="Intel Core i5-10400">
+        <brand>Intel</brand>
+        <socket_size>LGA1200</socket_size>
+        <cpu_speed unit="GHz">2.9</cpu_speed>
+        <core>6</core>
+        <graphic>Integrated</graphic>
+        <usage>
+          <use for="office_use"/>
+          <use for="low_grapic"/>
+        </usage>
+        <release_date>2020-05-21</release_date>
+        <price>195000</price>
+    </cpumodel>
+  </cpu>
+  
+  <exa:mainboard>
+    <exa:boardmodel name="ASUS ROG Strix Z390-E">
+        <exa:brand>ASUS</exa:brand>
+        <exa:socket_size>LGA1151</exa:socket_size>
+        <exa:board_size>ATX</exa:board_size>
+        <exa:as>
+          <exa:as_rec no="001">2020-01-01</exa:as_rec>
+          <exa:as_rec no="002">2021-05-16</exa:as_rec>
+        </exa:as>
+        <exa:release_date>2018-10-22</exa:release_date>
+        <exa:price>140000</exa:price>
+    </exa:boardmodel>  
+    <exa:boardmodel name="GIGABYTE B450 AORUS PRO">
+        <exa:brand>GIGABYTE</exa:brand>
+        <exa:socket_size>AM4</exa:socket_size>
+        <exa:board_size>ATX</exa:board_size>
+        <exa:release_date>2018-07-14</exa:release_date>
+        <exa:price>162000</exa:price>
+    </exa:boardmodel>  
+    <exa:boardmodel name="MSI B450 TOMAHAWK MAX">
+        <exa:brand>MSI</exa:brand>
+        <exa:socket_size>AM4</exa:socket_size>
+        <exa:board_size>ATX</exa:board_size>
+        <exa:as>
+          <exa:as_rec no="001">2023-04-27</exa:as_rec>
+        </exa:as>
+        <exa:release_date>2023-04-25</exa:release_date>
+        <exa:price>239000</exa:price>
+    </exa:boardmodel>
+  </exa:mainboard>
+
+  <lib:ram>
+    <lib:rammodel name="Samsung PC4-25600">
+        <lib:brand>Samsumg</lib:brand>
+        <lib:ddr type = "ddr4"/>
+        <lib:capacity unit="GB">16</lib:capacity>
+        <lib:release_date>2020-07-04</lib:release_date>
+        <lib:price>40000</lib:price>
+    </lib:rammodel>
+    <lib:rammodel name="Corsair Vengeance RGB Pro">
+        <lib:brand>Corsair</lib:brand>
+        <lib:ddr type = "ddr4"/>
+        <lib:capacity unit="GB">32</lib:capacity>
+        <lib:release_date>2021-01-25</lib:release_date>
+        <lib:price>290000</lib:price>
+    </lib:rammodel>  
+    <lib:rammodel name="G.Skill Ripjaws V">
+        <lib:brand>G.Skill</lib:brand>
+        <lib:ddr type = "ddr4"/>
+        <lib:capacity unit="GB">8</lib:capacity>
+        <lib:release_date>2016-10-12</lib:release_date>
+        <lib:price>110000</lib:price>
+    </lib:rammodel>
+  </lib:ram>
+  
+  <lib:ssd>
+    <lib:ssdmodel name="Samsung 970 EVO">
+      <lib:brand>Samsung</lib:brand>
+      <lib:capacity unit="GB">512</lib:capacity>
+      <lib:release_date>2018-05-07</lib:release_date>
+      <lib:price>160000</lib:price>
+    </lib:ssdmodel>
+    <lib:ssdmodel name="Crucial MX500">
+        <lib:brand>Crucial</lib:brand>
+        <lib:capacity unit="GB">256</lib:capacity>
+        <lib:release_date>2018-01-17</lib:release_date>
+        <lib:price>150000</lib:price>
+    </lib:ssdmodel>  
+    <lib:ssdmodel name="WD Blue 3D NAND">
+        <lib:brand>WD</lib:brand>
+        <lib:capacity unit="GB">1024</lib:capacity>
+        <lib:release_date>2017-10-18</lib:release_date>
+        <lib:price>245000</lib:price>
+    </lib:ssdmodel>
+  </lib:ssd>
+
+  <lib:power>
+    <lib:powermodel name="EVGA SuperNOVA 750W">
+      <lib:brand>EVGA</lib:brand>
+      <lib:power_output unit="Watts">750</lib:power_output>
+      <lib:release_date>2021-05-01</lib:release_date>
+      <lib:price>130000</lib:price>
+    </lib:powermodel>
+    <lib:powermodel name="Corsair RM850x">
+      <lib:brand>Corsair</lib:brand>
+      <lib:power_output unit="Watts">850</lib:power_output>
+      <lib:release_date>2021-07-15</lib:release_date>
+      <lib:price>232000</lib:price>
+    </lib:powermodel>
+    <lib:powermodel name="Seasonic Focus GX-650">
+      <lib:brand>Seasonic</lib:brand>
+      <lib:power_output unit="Watts">650</lib:power_output>
+      <lib:release_date>2019-09-19</lib:release_date>
+      <lib:price>148000</lib:price>
+    </lib:powermodel>
+  </lib:power>
+</lib:pcshop>
